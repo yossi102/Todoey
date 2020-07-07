@@ -60,14 +60,38 @@
 			children = (
 				857400E3246075AD0019CE8F /* AppDelegate.swift */,
 				857400E5246075AD0019CE8F /* SceneDelegate.swift */,
-				857400E7246075AD0019CE8F /* TodoListViewController.swift */,
-				857400E9246075AD0019CE8F /* Main.storyboard */,
+				85790D4624AC908500E3F2E1 /* Model */,
+				85ED6051249A338A0068020D /* View */,
+				85ED6052249A33A80068020D /* Controller */,
 				857400EF246075AE0019CE8F /* Assets.xcassets */,
 				857400F1246075AF0019CE8F /* LaunchScreen.storyboard */,
 				857400F4246075AF0019CE8F /* Info.plist */,
-				857400EC246075AD0019CE8F /* Todoey.xcdatamodeld */,
 			);
 			path = Todoey;
+			sourceTree = "<group>";
+		};
+		85790D4624AC908500E3F2E1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				857400EC246075AD0019CE8F /* Todoey.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		85ED6051249A338A0068020D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				857400E9246075AD0019CE8F /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		85ED6052249A33A80068020D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				857400E7246075AD0019CE8F /* TodoListViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
