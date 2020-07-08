@@ -34,8 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        // what will happen when the app will be close by the user or the system
-        print("terminate")
+
+        self.saveContext()
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {

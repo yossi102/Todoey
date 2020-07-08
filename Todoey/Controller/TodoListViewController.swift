@@ -14,37 +14,18 @@ class TodoListViewController: UITableViewController {
     var itemArrey = [Item]()
     
     let defaults = UserDefaults.standard
-    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         
         
         
-        print(dataFilePath!)
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         
         super.viewDidLoad()
         
-//        loadItems()
+        loadItems()
         
-        
-//        let newItme = Item()
-//        newItme.title = "Find Mike"
-//        itemArrey.append(newItme)
-//
-//        let newItme2 = Item()
-//        newItme2.title = "Buy Eggos"
-//        itemArrey.append(newItme2)
-//
-//        let newItme3 = Item()
-//        newItme3.title = "Destroy Demogorgon"
-//        itemArrey.append(newItme3)
-//        saveItems()
-        
-        //
-        //                if let items = defaults.array(forKey: "TodoListArray") as? [Item] {
-        //                    itemArrey = items
-        //                }
     }
     
     //MARK Tableview Datasource Methods
@@ -75,6 +56,9 @@ class TodoListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         itemArrey[indexPath.row].done = !itemArrey[indexPath.row].done
+        
+//        context.delete(itemArrey[indexPath.row])
+//        itemArrey.remove(at: indexPath.row)
         saveItems()
         
         
@@ -97,6 +81,7 @@ class TodoListViewController: UITableViewController {
             
             let newItem = Item(context: self.context)
             newItem.title = textField.text!
+            
             self.itemArrey.append(newItem)
             
             //            self.defaults.set(self.itemArrey, forKey: "TodoListArray")
@@ -121,7 +106,7 @@ class TodoListViewController: UITableViewController {
     //MARK - Model Manupulation Methods
     
     func saveItems() {
-                
+        
         do {
             try context.save()
         } catch {
@@ -131,17 +116,15 @@ class TodoListViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-//    func loadItems() {
-//
-//        if let data = try? Data(contentsOf: dataFilePath!) {
-//
-//            let decoder = PropertyListDecoder()
-//            do {
-//                itemArrey = try decoder.decode([Item].self, from: data)
-//            } catch {
-//                print(error)
-//            }
-//        }
-//    }
+    func loadItems() {
+        
+        let request : NSFetchRequest<Item> = Item.fetchRequest()
+        do{
+            itemArrey = try context.fetch(request)
+        } catch {
+            
+            print(error)
+        }
+    }
 }
 
