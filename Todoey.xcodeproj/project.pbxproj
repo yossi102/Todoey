@@ -14,6 +14,7 @@
 		857400EE246075AD0019CE8F /* Todoey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 857400EC246075AD0019CE8F /* Todoey.xcdatamodeld */; };
 		857400F0246075AE0019CE8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 857400EF246075AE0019CE8F /* Assets.xcassets */; };
 		857400F3246075AF0019CE8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 857400F1246075AF0019CE8F /* LaunchScreen.storyboard */; };
+		85C1050024B9E012007307F9 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C104FF24B9E012007307F9 /* CategoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		857400EF246075AE0019CE8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		857400F2246075AF0019CE8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		857400F4246075AF0019CE8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85C104FF24B9E012007307F9 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		85ED6052249A33A80068020D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				85C104FF24B9E012007307F9 /* CategoryViewController.swift */,
 				857400E7246075AD0019CE8F /* TodoListViewController.swift */,
 			);
 			path = Controller;
@@ -165,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85C1050024B9E012007307F9 /* CategoryViewController.swift in Sources */,
 				857400E8246075AD0019CE8F /* TodoListViewController.swift in Sources */,
 				857400E4246075AD0019CE8F /* AppDelegate.swift in Sources */,
 				857400E6246075AD0019CE8F /* SceneDelegate.swift in Sources */,
